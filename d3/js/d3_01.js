@@ -11,7 +11,7 @@ function randomColor(){
 $('button').bind('click',function(){
         var cir = output.append('circle');
         
-        cir.attr('value',0).attr('cx', Math.floor(Math.random()*400)+100).attr('cy',Math.floor(Math.random()*400)+100).attr('r',(Math.random()*100)).attr('stroke', 'black').attr('fill', randomColor()).attr('storke-width', '2');
+        cir.attr('value',0).attr('cx', Math.floor(Math.random()*1000)+100).attr('cy',Math.floor(Math.random()*400)+100).attr('r',(Math.random()*100)).attr('stroke', 'black').attr('fill', randomColor()).attr('storke-width', '2');
     
      var $cir = $('circle');
     $cir.bind('click',function(){
