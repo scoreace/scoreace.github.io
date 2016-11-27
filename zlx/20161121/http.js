@@ -1,6 +1,8 @@
 var http = require('http');
+
 var server = http.createServer(function(req, res) {
 
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
 
 
     // 引用 File System 模組
@@ -21,7 +23,9 @@ var server = http.createServer(function(req, res) {
         // 將檔案內容印出
         console.log(content);
     });
+    res.end();
+
 });
 
 server.listen(23456);
-console.log('Server running at http://192.168.0.105:23456/');
+console.log('Server running at http://192.168.0.100:23456/');
