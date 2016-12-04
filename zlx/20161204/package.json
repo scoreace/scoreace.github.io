@@ -1,0 +1,17 @@
+{
+  "name": "http_client",
+  "version": "0.0.1",
+  "description": "download node.js page from jianshu",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kChen",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "jQuery": "^1.7.4",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {}
+}
