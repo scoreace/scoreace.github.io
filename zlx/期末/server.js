@@ -1,0 +1,38 @@
+// 引入函式庫
+var mongoose = require('mongoose');
+var User = require('./models/user.js');
+
+
+
+
+var dbname = 'members';
+
+// 連接database
+mongoose.connect('mongodb://localhost/' + dbname);
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log('資料庫連接成功');
+
+    var wang = new User({
+        name: '老2王',
+        username: 'lws1s',
+        password: 'asdf',
+        admin: false,
+        location: 'Taipei',
+        meta: {
+            age: 18,
+            website: ''
+        }
+    })
+
+    wang.save(function(err, doc) {
+        if (err) {
+            console.log(err.message);
+        } else {
+            console.log(doc.name + '新增成功');
+
+        }
+    })
+});
