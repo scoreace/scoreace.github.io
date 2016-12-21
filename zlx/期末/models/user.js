@@ -4,18 +4,18 @@ var Schema = mongoose.Schema;
 
 // 建立 profile Schema
 var userSchema = new Schema({
-  name: String,
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  nickname: { type: String, required: true },
-  admin: Boolean,
-  location: String,
-  meta: {
-    age: Number,
-    website: String
-  },
-  created_at: Date,
-  updated_at: Date
+    name: String,
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    nickname: { type: String, required: true },
+    admin: Boolean,
+    country: String,
+    meta: {
+        age: Number,
+        website: String
+    },
+    init_date: Date,
+    updated_at: Date
 });
 
 // 根據 userSchema 產成 User 物件

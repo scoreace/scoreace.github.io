@@ -22,13 +22,24 @@ app.post('/login', function(req, res) {
     //     console.log(users);
     // });
 
-    var data = new User({
+    var data = {
+        username: req.body.username
+    }
+    User.find(data, function(err, user) {
+        if (user.length == 0)
+            res.redirect("/member.html");
+        else
+            res.redirect("/");
+
+    });
+    var wang = new User({
         username: req.body.username,
         password: req.body.password,
-        nickname: req.body.nickname
+        nickname: req.body.nickname,
+        country: req.body.country,
+        init_date: req.body.init_name
     })
-
-    data.save(function(err, doc) {
+    wang.save(function(err, doc) {
         if (err) {
             console.log(err.message);
         } else {
@@ -36,13 +47,6 @@ app.post('/login', function(req, res) {
 
         }
     })
-    User.find(data, function(err, user) {
-        if (user.length == 0)
-            res.redirect("/");
-        else
-            res.redirect("/member.html");
-
-    });
 
 });
 
@@ -51,12 +55,12 @@ app.post('/login', function(req, res) {
 
 
 // 取得使用者列表
-app.get('/users/list', function(req, res) {
-    User.find(function(err, users) {
-        res.send(JSON.stringify(users));
-        res.end();
-    });
-})
+//app.get('/users/list', function(req, res) {
+//  User.find(function(err, users) {
+//    res.send(JSON.stringify(users));
+//  res.end();
+//  });
+//})
 
 app.listen(3000, function() {
     console.log('Example app listening on http://127.0.0.1:3000/');
