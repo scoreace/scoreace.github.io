@@ -50,10 +50,6 @@ app.post('/login', function(req, res) {
 
 });
 
-
-
-
-
 // 取得使用者列表
 //app.get('/users/list', function(req, res) {
 //  User.find(function(err, users) {
