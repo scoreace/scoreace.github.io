@@ -29,7 +29,7 @@ app.post('/login', function(req, res) {
         if (user.length == 0)
             res.redirect("/member.html");
         else
-            res.redirect("/");
+            res.redirect("/login2.html");
 
     });
     var wang = new User({
