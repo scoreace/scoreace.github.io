@@ -37,7 +37,7 @@ app.post('/login', function(req, res) {
         password: req.body.password,
         nickname: req.body.nickname,
         country: req.body.country,
-        init_date: req.body.init_name
+        init_date: req.body.init_date
     })
     wang.save(function(err, doc) {
         if (err) {

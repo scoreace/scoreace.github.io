@@ -9,12 +9,13 @@ var userSchema = new Schema({
     password: { type: String, required: true },
     nickname: { type: String, required: true },
     admin: Boolean,
+    init_date: Date,
     country: String,
     meta: {
         age: Number,
         website: String
     },
-    init_date: Date,
+
     updated_at: Date
 });
 
